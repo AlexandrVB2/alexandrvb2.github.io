@@ -1,0 +1,370 @@
+body{
+	margin: 0;
+	background-color: #ffffff;
+}
+
+h1{
+	font-family: 'Lato', sans-serif;
+	font-size: 30pt;
+	font-weight: 700;
+	text-align: center;
+	color: #ffffff;
+	margin-top: 25%;
+	letter-spacing: 5px;
+	text-transform: uppercase;
+}
+
+h2{
+	font-family: 'Lato', sans-serif;
+	font-size: 26pt;
+	font-weight: 400;
+	text-align: center;
+	color: #2574A9;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+}
+
+h3{
+	font-family: 'Lato', sans-serif;
+	font-size: 20pt;
+	font-weight: 400;
+	text-align: center;
+	color: #2574A9;
+	text-transform: uppercase;
+}
+
+.parallax-content{
+	display: inline-block;
+	margin: 0px auto;
+	width: 100%;
+	height: 100vh;
+	min-height: 786px;
+	text-align: center;
+}
+
+.but01 {
+	display: inline-block;
+	width: 220px;
+/*	vertical-align: middle; */
+	margin: 15% auto;
+	padding-right: 50px;
+	/*height: 100px; */
+}
+
+.but02 {
+	display: inline-block;
+	width: 220px;
+/*	vertical-align: middle; */
+	margin: 15% auto;
+	padding-left: 50px;
+	/*height: 100px;*/
+}
+
+
+.content{
+	display: inline-block;
+	width: 100%;
+	min-height: 786px;
+	text-align: center;
+	margin: 10px auto;
+}
+
+.content .wrap01{
+	display: inline-block;
+	width: 40%;
+	margin: 10px;
+}
+
+.content .text01{
+	font-family: 'Lato', sans-serif;
+	font-size: 14pt;
+	font-weight: 300;
+	text-align: justify;
+	line-height: 1.5;
+	color: #2574A9;
+}
+
+.menu-circle{
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	position: fixed;
+	top: 30px;
+	right: 30px;
+	text-align: center;
+	/*background: radial-gradient(white 1%, #FFA9A1 60%); */
+	box-shadow: 0 0 0 rgba(248,0,0, 0.4);
+	animation: pulse 3s infinite;
+	/*box-shadow: 0 0 0 rgba(204,169,44, 0.4); */
+	/*animation: pulse 2s infinite; */
+	
+}
+
+.menu-circle span{
+	display: block;
+	margin: 20% auto;
+	/*color: #fc0a0a; */
+}
+
+@keyframes pulse {
+	/*0% {box-shadow: 0 0 0 0 rgba(252,10,10, 1.0);}
+	60% {box-shadow: 0 0 0 20px rgba(252,10,10, 0.0);}
+	100% {box-shadow: 0 0 0 0 rgba(252,10,10, 0.0);}*/
+	
+	0% {box-shadow: 0 0 0 0 rgba(248,0,0, 1.0);}
+	60% {box-shadow: 0 0 0 20px rgba(248,0,0, 0.0);}
+	100% {box-shadow: 0 0 0 0 rgba(248,0,0, 0.0);}
+	
+}
+
+/******************************меню */
+/*стилизуем менюшку*/
+.hidden-menu {
+  display: block;
+  position: fixed;
+  list-style:none;
+  padding: 20px;
+  margin: 0;
+  box-sizing: border-box;
+  width: 200px;
+  /*background-color: #2b343c;*/
+  /*background: rgba(170,240,0,0.5); */
+  background-color: #2574A9;
+  /*rgba(170,240,0,0.5); */
+  height: 100%;
+  top: 0;
+  left: -200px;
+  transition: left .2s;
+  z-index: 2;
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+
+  }
+
+.hidden-menu li a {
+	display: block;
+	font-family: 'Lato', sans-serif;
+	font-size: 14pt;
+	font-weight: 300;
+	text-align: center;
+	text-decoration: none;
+	color: #ffffff;
+	text-transform: uppercase;
+	padding: 7px 0;
+	transition: all 0.25s ease;
+	}
+	
+.hidden-menu li a:hover {
+	-webkit-transform: scale(1.4);
+	-ms-transform: scale(1.4);
+	-o-transform: scale(1.4);
+	transform: scale(1.4);
+	}
+	
+/*скрываем инпут чекбокс*/
+.hidden-menu-ticker {
+  display: none;
+}
+/*общие стили значка-гамбургера, самого лэйбла*/
+.btn-menu {
+	/*color: #fff; */
+	/*background-color: #fff;*/
+	padding: 15px;
+	position: fixed;
+	top: 30px;
+	left: 30px;
+	cursor: pointer;
+	transition: left .23s;
+	z-index: 3;
+	-webkit-transform: translateZ(0);
+	-webkit-backface-visibility: hidden;
+  	
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	/*box-shadow: 0 0 0 rgba(248,0,0, 0.0); */
+	animation: pulse 3s infinite;
+}
+/*общие стили полосок*/
+.btn-menu span {
+  display: block;
+  height: 4px;
+  /*background-color: #fc0a0a; */
+  background-color: #f80000;
+  
+  /*border: 1px solid #ffffff; */
+  margin: 5px 0 0;
+  transition: all .1s linear .2s;
+  position: relative;
+}
+/*прибиваем к верху лэйбла первую полоску*/
+.btn-menu span.first {
+  margin-top: 0;
+}
+/*при нажатии на бургер двигаем его и делаем другой фон бургеру*/
+.hidden-menu-ticker:checked ~ .btn-menu {
+  left: 210px; /*!!!!!! отступ, позволяет выезжать из меню */
+  background-color: #2574A9;
+  /*background-color: none; */
+  animation: none;
+  
+}
+/*и дальше стили меняющие бургер, двигающие менюшку по событию - нажатие на значек бургера*/
+.hidden-menu-ticker:checked ~ .hidden-menu {
+  left: 0;
+}
+.hidden-menu-ticker:checked ~ .btn-menu span.first {
+  -webkit-transform: rotate(45deg);
+  top: 7px; /*задаем кривизну угла между стрелками*/
+  background-color: #ffffff; /*цвет черточки*/
+  
+  
+}
+.hidden-menu-ticker:checked ~ .btn-menu span.second {
+  opacity: 0;
+  
+  
+}
+
+.hidden-menu-ticker:checked ~ .btn-menu span.third {
+  -webkit-transform: rotate(-45deg);
+  top: -7px; /*задаем кривизну угла между стрелками*/
+  background-color: #ffffff; /*цвет черточки*/
+  
+  
+}
+
+/* =====================================================*/
+
+.knopka4 {
+	width: 220px;
+	border: 2px solid #ffffff;
+	background-color: transparent;
+	border-radius: 10px;
+	font-family: 'Lato', sans-serif;
+	font-size: 14pt;
+	font-weight: 300;
+	text-align: center;
+	color: #ffffff;
+	cursor: pointer;
+	padding: 20px;
+	display: block;
+	position: relative;
+	box-shadow: inset 0 0 0 50px #2574A9;
+	transition: all 0.6s;
+}
+
+.knopka4:hover {
+	color: #2574A9;
+	box-shadow: none;
+	border: 2px solid #2574A9;
+	background: #ffffff;
+}
+
+/*=================================================*/
+/* Форма */
+
+.figure01{
+	color: #2574A9;
+	padding: 0 5px;
+}
+
+.text1{
+	font-family: 'Lato', sans-serif;
+	font-size: 16pt;
+	font-weight: 400;
+	color: #2574A9;
+	padding-bottom: 15px;
+	margin-top: 5px;
+}
+
+
+.footer_box2{
+	display: block;
+	width: 80%;
+	/*font: normal 12pt "Lato Regular", sans-serif;*/
+	border: 1px solid #2574A9;
+	/*outline: none; */
+	padding: 10px;
+	margin: 10px auto;
+	background-color: #ffffff;
+
+}
+
+.footer_box2 .input1{
+	width: 100%;
+	font-family: 'Lato', sans-serif;
+	font-size: 12pt;
+	font-weight: 300;
+	color: #2574A9;
+	border: none;
+	outline: none;
+	background-color: #ffffff;
+	text-decoration: none;
+}
+
+.footer_box2 textarea{
+	display: block;
+	width: 100%;
+	/*height: 90%;*/
+	font-family: 'Lato', sans-serif;
+	font-size: 12pt;
+	font-weight: 300;
+	color: #2574A9;
+	border: none;
+	outline: none;
+	resize: none;
+	overflow: hidden;
+	/*margin-top: 10px;
+	margin-left: 12px;
+	margin-bottom: 5px; */
+	box-sizing: border-box;
+	background-color: inherit;
+}
+
+.btn_1 {
+	width: 150px;
+	height: 50px;
+	background: transparent;
+	display: block;
+	font-family: 'Lato', sans-serif;
+	font-size: 12pt;
+	font-weight: 300;
+	border: 1px solid #2574A9;
+	margin: 15px auto;
+	color: #2574A9;
+	outline: none;
+}
+
+.btn_1:active {
+	border: 1px solid #2574A9;
+	outline: none;
+}
+
+.btn_1:hover {
+	color: #ffffff;
+	background: #2574A9;
+	font-weight: 400;
+	transition: background 0.9s;
+ }
+ 
+ /********************************************/
+/*Убираем Плейсхолдер placeholder в форме*/
+input::-webkit-input-placeholder       {color:#2574A9; text-indent: 0px;   transition: text-indent 0.3s ease;}
+input::-moz-placeholder                {color:#2574A9; text-indent: 0px;   transition: text-indent 0.3s ease;}
+input:-moz-placeholder                 {color:#2574A9; text-indent: 0px;   transition: text-indent 0.3s ease;}
+input:-ms-input-placeholder            {color:#2574A9; text-indent: 0px;   transition: text-indent 0.3s ease;}
+input:focus::-webkit-input-placeholder {text-indent: 500px; transition: text-indent 0.3s ease;}
+input:focus::-moz-placeholder          {text-indent: 500px; transition: text-indent 0.3s ease;}
+input:focus:-moz-placeholder           {text-indent: 500px; transition: text-indent 0.3s ease;}
+input:focus:-ms-input-placeholder      {text-indent: 500px; transition: text-indent 0.3s ease;}
+
+textarea::-webkit-input-placeholder       {color:#2574A9; opacity: 1; transition: opacity 0.6s ease;}
+textarea::-moz-placeholder                {color:#2574A9; opacity: 1; transition: opacity 0.6s ease;}
+textarea:-moz-placeholder                 {color:#2574A9; opacity: 1; transition: opacity 0.6s ease;}
+textarea:-ms-input-placeholder            {color:#2574A9; opacity: 1; transition: opacity 0.6s ease;}
+textarea:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.6s ease;}
+textarea:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.6s ease;}
+textarea:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.6s ease;}
+textarea:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.6s ease;}
