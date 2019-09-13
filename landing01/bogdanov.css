@@ -194,7 +194,7 @@ article{
 	border-bottom: 2px solid;
 	border-color: #29807C;
 	background: linear-gradient(to top right, #3BAA36 15%, #9ee09b 50%, #79d474 85%);
-	margin: -4 auto; /*выравниваю по центру*/
+	margin: -4px auto; /*выравниваю по центру*/
 }
 
 #telef4{
@@ -205,10 +205,10 @@ article{
 	border-bottom: 2px solid;
 	border-color: #29807C;
 	background: #2e8529;
-	margin: -1 auto; /*выравниваю по центру*/
+	margin: -1px auto; /*выравниваю по центру*/
 }
 
-#telef5{
+.telef5{
 	display: inline-block;
 	width: 40px;
 	height: 10px;
@@ -411,8 +411,8 @@ article{
 	height: 100px;
 	background-color: #29807C;
 	color: #ffffff;
-	border: 1px solid; #29807C;
-	margin: 0 auto;
+	border: 1px solid #29807C;
+	margin: 0px auto;
 	}
 
 #main_price .table1 .price_size{
@@ -782,7 +782,7 @@ header{
 
 /**********************************************************/
 /**********ПОВОРОТ МОБИЛКИ***********************/
-@media (min-width: 400px) and (max-width: 735px){
+@media (min-width: 400px) and (max-width: 735px) {
 	
 #wrapper{
 	display: block;
@@ -866,7 +866,6 @@ header{
 .main_price__price_box1{
 	width: 300px;
 	margin: 15px auto;
-	
 }
 
 .main_footer__footer_box1{
@@ -876,4 +875,4 @@ header{
 }
 
 
-	)
+}
