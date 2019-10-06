@@ -1182,11 +1182,95 @@ footer img {
 		
 	}
 	
-/*https://stackoverflow.com/questions/10826784/make-html5-video-poster-be-same-size-as-video-itself*/
-
 }
 
-@media (min-width: 576px) and (max-width: 1024px) {
+/***Поворот мобилки**/
+@media (min-width: 576px) and (max-width: 735px) {
+	
+	.tab_wrapper{
+		width: 800px;
+		overflow: auto;
+		font-family: inherit;
+		font-size: 10pt;
+		font-weight: 300;
+	}
+
+	#modalwrap {
+		position: fixed;
+	}
+
+	#modalOkno	{
+		width: 350px;
+		font-size: 14pt;
+		height: auto;
+	}
+
+	.close {
+		display: none;
+	}
+
+	.modalOkno_head{
+		font-size: 16pt;
+	}
+	
+	.modalOkno_text{
+		padding: 5px;
+		line-height: 1.5;
+	}
+	
+	.modal__botton1{
+		font-size: 10pt;
+	}
+
+	.modal__botton2{
+		font-size: 10pt;
+	}
+
+
+	#videoplayer{
+	min-height: 650px;
+	}	
+	
+	/****************Для видеоблока**********************/
+	
+	#videoplayer{
+		min-height: 600px;
+	}
+	
+	.video_content{
+		/*display: none;*/
+		display: flex;
+		width: 300px;
+		text-align: center;
+		min-height: 300px;
+		align-items: flex-start;
+	}
+	
+	video {
+		width: 450px;
+		height: 250px;
+	}
+	
+	video[poster]{
+		width: 450px;
+		height: 250px;
+	}
+
+	#buttons{
+		height: 40px;
+		width: 100%;
+		justify-content: center;
+	}
+
+	#control {
+		color: #002a52;
+		margin: 10px auto;
+	}
+	
+}
+
+
+@media (min-width: 736px) and (max-width: 1024px) {
 
 	.tab_wrapper{
 		width: 100%;
