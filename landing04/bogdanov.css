@@ -1,6 +1,6 @@
 @font-face {
-font-family: Muller Regular; /* Имя шрифта */
-src: url(mullerregular.ttf); /* Путь к файлу со шрифтом */
+font-family: Muller Regular;
+src: url(mullerregular.ttf);
 }
 
 body{
@@ -13,7 +13,6 @@ h2{
 	font-size: 20pt;
 	font-weight: 700;
 	padding-top: 92px;
-	/*padding-bottom: 10px;*/
 	color: #ffffff;
 	text-align: center;
 }
@@ -23,10 +22,8 @@ h2{
 	display: flex;
 	width: 100%;
 	height: 72px;
-	/*border: 1px solid red;*/
 	position: fixed;
 	align-items: center;
-	/*background-color: #bebebe;*/
 	background-color: #002a52;
     top: 0;
     right: 0;
@@ -61,7 +58,6 @@ h2{
 .nav ul li a{
 	text-decoration: none;
 	font-size: 14pt;
-	/*font-weight: 700;*/
 	text-align: center;
 	color: #ffffff;
 }
@@ -81,7 +77,6 @@ h2{
 	height: auto;
 	min-height: 100vh;
 	background-color: #62aee0;
-	/*flex-wrap: wrap;
 	align-items: top;*/
 	width: 100%;
 	font-family: inherit;
@@ -94,10 +89,7 @@ h2{
 /***************************************/
 /***************************************/
 
-/*Общий блок расположения табов*/
-
 .tab-container{
-	/*background-color: transparent;*/
 	background: #0c5f96;
 	border-radius: 10px;
 	overflow: hidden;
@@ -105,24 +97,18 @@ h2{
 	margin: 0px auto;
 	min-height: 350px;
 	height: auto;
-	/*border: 1px solid red;*/
-	/*height: 350px;*/
 	font-family: inherit;
 }
 
-/*Заголовок блока табов*/
 .tab-title{
-	/*font-family: sans-serif;*/
 	color: #ffffff;
 	margin: 10px;
 	font-weight: normal;
 	font-size: 16pt;
 }
 
-/* контейнер табов*/
 .tab-wrapper{
 	width: 100%;
-    /*overflow-x: scroll;*/
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
@@ -133,21 +119,15 @@ h2{
 	display: none;
 }
 
-/* Контейнер, где расположен текст Таба */
 .tab-wrapper .tab-item{
     background-color: #ffffff;
-    /*width: calc(100%-200px);*/
-    /*max-width: 100%; */
 	width: 100%;
     padding: 20px;
     order: 1;
 	border-radius: 0px 0px 10px 10px;
 	border: 1px solid #e20311;
-	/*мой текст*/
-	/*height: 100%;*/
   }
 
-/*Название того или иного таба*/
 .tab-wrapper label{
 	height: 35px;
 	line-height: 35px;
@@ -162,19 +142,15 @@ h2{
     justify-content: center;
     flex-grow: 1;
 	margin-bottom: -1px;
-    /*border-top: 3px solid transparent; */
-    /*border-bottom: 3px solid transparent;*/
     cursor: pointer;
 }
 
-/* запрет на выделение пользователем текста*/
 .no-select{
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
 }
 
-/*Стиль для для label в котором input имеет свойство checked */
 .tab-wrapper input:checked + label{
     border: 1px solid #e20311;
 	background-color: #e20311;
@@ -183,7 +159,6 @@ h2{
 	margin-right: 5px;
 }
 
-/*делаем видимым ТАБ, у которого input имеет свойство checked */
 .tab-wrapper input:checked + label + .tab-item{
 	display: block;
 	min-height: 350px;
@@ -196,8 +171,6 @@ h2{
 	font-size: 14pt;
 	font-weight: 400;
 	font-family: inherit;
-	/*margin-bottom: 10px;*/
-	/*border: 1px solid #000000;*/
 }
 
 .list1 label {
@@ -234,12 +207,6 @@ h2{
 }
 
 .list1 button:hover {
-	/*font-family: inherit;
-	font-size: 14pt;
-	font-weight: 400;
-	padding: 15px;
-	margin-top: 15px;
-	outline: none;*/
 	border: 1px solid #0c5f96;
 	color: #0c5f96;
 	background: #ffffff;
@@ -250,7 +217,6 @@ h2{
 	width: 30%;
 	min-width: 300px;
 	flex-wrap: wrap;
-	/*border: 1px solid #000000;*/
 	justify-content: center;
 	
 }
@@ -324,7 +290,6 @@ h2{
 }
 
 #modalOkno span{
-	/*color: #e20311;*/
 	font-style: italic;
 	font-weight: 700;
 }
@@ -409,7 +374,7 @@ table.table-3 td {
 
 .slider {
     -webkit-appearance: none;
-	padding: 0px 0px 0px 0px; /*Для IE*/
+	padding: 0px 0px 0px 0px;
     width: 100%;
     height: 15px;
     border-radius: 5px;
@@ -442,19 +407,13 @@ table.table-3 td {
     cursor: pointer;
 }
 
-/****** Для IE https://brennaobrien.com/blog/2014/05/style-input-type-range-in-every-browser.html********/
+
 input[type=range]::-ms-track {
     width: 100%;
     height: 5px;
-   
-    /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
     background: transparent;
-    
-    /*leave room for the larger thumb to overflow with a transparent border */
-    border-color: transparent;
+border-color: transparent;
     border-width: 6px 0;
-
-    /*remove default tick marks*/
     color: transparent;
 }
 
@@ -470,21 +429,6 @@ input[type=range]::-ms-thumb {
     border-radius: 50%;
     background: #e20311;
 }
-
-/*
-
-input[type=range]::-ms-fill-upper {
-    background: transparent;
-    border-radius: 10px;
-}
-
-input[type=range]:focus::-ms-fill-lower {
-    background: #888;
-}
-input[type=range]:focus::-ms-fill-upper {
-    background: #ccc;
-}
-*/
 
 /***************************************/
 /*******      Текст           **********/
@@ -507,7 +451,6 @@ input[type=range]:focus::-ms-fill-upper {
 
 #accordion{
 	display: inline-block;
-	/*margin-top: 72px;*/
 	height: auto;
 	min-height: 100vh;
 	background-color: #0c5f96;
@@ -515,23 +458,18 @@ input[type=range]:focus::-ms-fill-upper {
 	font-family: inherit;
 }
 
-/* Формируем базовый контейнер аккордеона */
+
 .accordion {
     width: 100%;
-/* ширина произвольная выбирается в зависимости от места размещения */
     max-width: 720px;
     min-height: 0px;
     display: block;
-/* относительное позиционирование */
-    /*position: relative;*/
     margin: 0px auto;
     padding: 0px;
-    /*background-color: #62aee0;*/
     background-color: #ffffff;
     overflow: hidden;
 }
 
-/* заголовки панелей аккордеона */
 .accordion h2 {
 	font-size: 16px;
 	font-weight: 300;
@@ -543,8 +481,6 @@ input[type=range]:focus::-ms-fill-upper {
     cursor: pointer;
     color: #ffffff;
     background: #62aee0;
-    /*border-top: 1px solid #3face4;*/
-    /*border-bottom: 1px solid #2479a5;*/
     border-bottom: 1px solid #0c5f96;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -552,21 +488,14 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 
-/* Формируем блоки с содерханием */
 .msg {
-	/*position: relative;*/
 	overflow: auto;
-	/*max-height: 800px;*/
 	opacity: 1;
-	/*transform: translate(0, 0);*/
 }
  
-/* оформляем параграфы */
 .msg p {
 	color: #000000;
 	font-size: 12pt;
-	/*line-height: 20px;*/
-	/*letter-spacing: 1.5;*/
 	text-align: justify;
 	line-height: 1.5;
 	color: #002a52;
@@ -574,7 +503,6 @@ input[type=range]:focus::-ms-fill-upper {
 }
  
 
-/* Формируем неупорядоченный список */
 .accordion ul {
 	list-style: none;
 	perspective: 900px;
@@ -582,14 +510,12 @@ input[type=range]:focus::-ms-fill-upper {
 	margin: 0px;
 }
  
-/* Определяем и формируем отдельный элемент списка в который поместим скрытый флажек, заголовок панелей и блок с содержанием */
 .accordion ul li {
-	/*position: relative;*/
 	padding: 0;
 	margin: 0;
 }
  
-/* устанавливаем время ожидания перед воспроизведением анимации на основе нумерации в дереве элементов */
+
 .accordion ul li:nth-of-type(1) {
 	animation-delay: 0.5s;
 	-webkit-animation-delay: 0.5s;
@@ -613,7 +539,6 @@ input[type=range]:focus::-ms-fill-upper {
 	padding-bottom: 0;
 }
  
-/* Сформируем  указатель переключения состояния аккордеона */
 .accordion ul li i {
 	position: absolute;
 	transform: translate(-6px, 0px);
@@ -622,11 +547,9 @@ input[type=range]:focus::-ms-fill-upper {
     -o-transform: translate(-6px, 0px);
 	
 	margin-top: 16px;
-/* расположим указатель на панели заголовка справа */
 	right: 25px;
 }
  
-/* "Рисуем сам указатель */
 .accordion ul li i:before, .accordion ul li i:after {
 	content: "";
 	position: absolute;
@@ -635,7 +558,6 @@ input[type=range]:focus::-ms-fill-upper {
 	height: 9px;
 }
 
-/* Добавляем элемент трансформации указателя при переключении */
 .accordion ul li i:before {
 	transform: translate(-2px, 0px) rotate(45deg);
 	-ms-transform: translate(-2px, 0px) rotate(45deg);
@@ -650,7 +572,6 @@ input[type=range]:focus::-ms-fill-upper {
     -o-transform: translate(2px, 0px) rotate(-45deg);
 }
  
-/* Делаем чекбокс скрытым*/
 .accordion ul li input[type=checkbox] {
 	position: absolute;
 	cursor: pointer;
@@ -661,7 +582,6 @@ input[type=range]:focus::-ms-fill-upper {
 	opacity: 0;
 }
 
-/* Когда у флажка установлен checked  блок с содержанием скрыт */
 .accordion ul li input[type=checkbox]:checked ~ div.msg {
 	margin-top: 0;
 	max-height: 0;
@@ -672,22 +592,14 @@ input[type=range]:focus::-ms-fill-upper {
     -o-transform: translate(0, 50%);
 }
 
-/* А указатель показывает вниз */
 .accordion ul li input[type=checkbox]:checked ~ i:before {
 	transform: translate(2px, 0px) rotate(45deg);
-	/*-ms-transform: translate(2px, 0px) rotate(45deg);
-    -webkit-transform: translate(2px, 0px) rotate(45deg);
-    -o-transform: translate(2px, 0px) rotate(45deg);*/
 }
 
 .accordion ul li input[type=checkbox]:checked ~ i:after {
 	transform: translate(-2px, 0px) rotate(-45deg);
-	/*-ms-transform: translate(2px, 0px) rotate(-45deg);
-    -webkit-transform: translate(2px, 0px) rotate(-45deg);
-    -o-transform: translate(2px, 0px) rotate(-45deg);*/
 }
 
-/*  Устанавливаем эффект перехода между двумя состояниями указателя */
 div.msg, ul li i:before, ul li i:after {
 	transition: all 0.5s ease-in-out;
 	-webkit-transition: all 0.5s ease-in-out;
@@ -696,7 +608,6 @@ div.msg, ul li i:before, ul li i:after {
 	-o-transition: all 0.5s ease-in-out;
 }
 
-/* Изображения внутри аккордеона сделаем их отзывчивыми */
 .accordion .msg img {
 	width: 100%;
     height: auto;
@@ -713,7 +624,6 @@ div.msg, ul li i:before, ul li i:after {
 
 #videoplayer{
 	display: inline-block;
-	/*margin-top: 72px;*/
 	width: 100%;
 	height: auto;
 	min-height: 100vh;
@@ -731,8 +641,6 @@ div.msg, ul li i:before, ul li i:after {
 	flex-wrap: wrap;
 	justify-content: center;
 	width: 720px;
-	/*height: 400px;*/
-	/*text-align: center;*/
 	background: #0c5f96;
 	border: 1px solid #ffffff;
 	border-radius: 10px;
@@ -769,7 +677,6 @@ video {
 #buttons{
 	display: flex;
 	align-items: center;
-	/*width: 135px; */
 	height: 20px;
 	padding-left: 5px;
 }
@@ -778,7 +685,6 @@ video {
 	display: flex;
 	align-items: center;
 	width: 300px;
-	/*width: 100%;*/
 	height: 16px;
 	padding: 2px;
 	margin: 2px 5px;
@@ -793,10 +699,7 @@ video {
 }
 
 
-/*Ползунок*/
-
 #control {
-    /*width: 90%;
 	margin: 0px auto;*/
 	color: #002a52;
 	margin-left: 5px;
@@ -812,7 +715,6 @@ video {
     opacity: 0.7;
     -webkit-transition: .2s;
     transition: opacity .2s;
-	/*Для IE*/
 	padding: 0px 0px 0px 0px; 
 }
 
@@ -839,19 +741,12 @@ video {
 }
 
 
-/****** Для IE https://brennaobrien.com/blog/2014/05/style-input-type-range-in-every-browser.html********/
 #control input[type=range]::-ms-track {
     width: 120px;
     height: 5px;
-   
-    /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
     background: transparent;
-    
-    /*leave room for the larger thumb to overflow with a transparent border */
     border-color: transparent;
     border-width: 6px 0;
-
-    /*remove default tick marks*/
     color: transparent;
 }
 
@@ -874,7 +769,6 @@ video {
 
 #mapinc{
 	display: inline-block;
-	/*margin-top: 72px;*/
 	height: auto;
 	min-height: 100vh;
 	background-color: #0c5f96;
@@ -926,7 +820,6 @@ footer img {
 
 @media (min-width: 240px) and (max-width: 575px) {
 	
-	/*Меню*/
 	.nav ul{
 	display: none;
 	}
@@ -934,7 +827,6 @@ footer img {
 	.nav__icon{
 	display: flex;
 	color: #ffffff;
-	/*justify-content: flex-end;*/
 	margin-left: auto;
 	margin-right: 20px;
 	}
@@ -946,7 +838,6 @@ footer img {
 	top: 72px;
 	left: 0px;
 	justify-content: center;
-	/*align-items: center;*/
 	width: 100%;
 	height: 100%;
 	background: rgba(255, 255, 255, 0.8);
@@ -957,36 +848,31 @@ footer img {
 	list-style: none;
 	padding: 0;
 	display: block;
-	/*display: flex;*/
-	/*justify-content: center;*/
 	text-align: center;
 	width: 85%;
 	height: 180px;
 	text-wrap: wrap;
 	background: #002a52;
-	/*align-items: center;*/
 	}
 	
 	.mobilenav ul::after {
 	content: ''; 
-	position: absolute; /* Абсолютное позиционирование */
-	right: 90px; /* Положение треугольника */
-	top: -10px; /* Положение треугольника */
-	border: 10px solid transparent; /* Прозрачные границы */
-	border-bottom: 20px solid #002a52; /* Добавляем треугольник */
+	position: absolute;
+	right: 90px;
+	top: -10px;
+	border: 10px solid transparent;
+	border-bottom: 20px solid #002a52;
 	}
 	
 	.mobilenav ul li{
 		padding-top: 15px;
 		padding-bottom: 10px;
-		/*display: block;*/
 		width: 100%;
 	}
 
 	.mobilenav ul li a{
 		text-decoration: none;
 		font-size: 14pt;
-		/*font-weight: 700;*/
 		text-align: center;
 		color: #ffffff;
 	}
@@ -994,7 +880,6 @@ footer img {
 	
 	/*******************ТАБЫ*********************/
 
-	/*Общий блок расположения табов*/
 	.tab-container{
 		background: #0c5f96;
 		border-radius: 10px;
@@ -1006,7 +891,6 @@ footer img {
 		font-family: inherit;
 	}
 
-	/* Контейнер, где расположен текст Таба */
 	.tab-wrapper .tab-item{
 		background-color: #ffffff;
 		width: 100%;
@@ -1016,7 +900,6 @@ footer img {
 		border: none;
 	}
 
-	/*делаем видимым ТАБ, у которого input имеет свойство checked */
 	.tab-wrapper input:checked + label + .tab-item{
 		display: block;
 		min-height: 350px;
@@ -1034,7 +917,7 @@ footer img {
 	}
 
 	.list1 label {
-		min-width: 260px; /**/
+		min-width: 260px;
 		padding-top: 5px;
 	}
 
@@ -1045,7 +928,7 @@ footer img {
 		padding: 7px;
 		margin-bottom: 5px;
 		border: 1px solid #e20311;
-		min-width: 260px; /**/
+		min-width: 260px;
 	}
 
 	#modalwrap {
@@ -1113,14 +996,8 @@ footer img {
 	    float: left;
 	    font-weight: 700;
 	    text-transform: uppercase;
-		/*position: absolute;*/
-		/*left: 35px;*/
-		/*margin-right: auto;*/
-		/*text-align: left;*/
-		
 	}
   
-	/****************Ползунок**********************/
 	.slidecontainer {
 		margin: 25px auto;
 	}
@@ -1146,7 +1023,6 @@ footer img {
 	}
 	
 	.video_content{
-		/*display: none;*/
 		display: flex;
 		width: 300px;
 		text-align: center;
@@ -1165,18 +1041,12 @@ footer img {
 	}
 
 	#buttons{
-		/*display: flex;
-		align-items: center;*/
-		/*width: 135px; */
 		height: 40px;
 		width: 100%;
 		justify-content: center;
-		/*padding-left: 5px;*/
 	}
 
 	#control {
-		/*width: 90%;
-		margin: 0px auto;*/
 		color: #002a52;
 		margin: 10px auto;
 		
@@ -1250,7 +1120,6 @@ footer img {
 	}
 	
 	.video_content{
-		/*display: none;*/
 		display: flex;
 		width: 450px;
 		text-align: center;
