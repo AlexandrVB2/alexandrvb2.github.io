@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf8" />
+	<title>Мой лендинг №4</title>
+	<meta name="description" content="Мой лендинг №4" />
+    <meta name="author" content="Alexander V Bogdanov https://alexandrvb2.github.io" />
+	<link rel="stylesheet" href="bogdanov.css" />
+	<link href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" rel="stylesheet"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+
+	<nav class="nav">
+		<ul>
+
+			<li>
+				<a href="#tabs">Табы</a>
+			</li>
+			<li>
+				<a href="#accordion">Аккордеон</a>
+			</li>
+			<li>
+				<a href="#videoplayer">Видеоплеер</a>
+			</li>
+			<li>
+				<a href="#mapinc">Карта</a>
+			</li>
+
+		</ul>
+		
+		<div class="nav__icon"><a class="nav__icon__a" onClick="mobilemenu();"><i class="fa fa-bars fa-3x"></i></a></div>
+	</nav>
+	
+	<section class="tabs" id="tabs">
+		<h2>Табы</h2>
+		<div class="tab-container">
+			<h4 class="tab-title">Заголовок табов</h4>
+			<div class="tab-wrapper">
+				<input type="radio" name="tab" id="tab1" checked />
+				<label class="tab-label no-select" for="tab1" nth="1">Модальная форма</label>
+				<div class="tab-item" id="tab-content1">
+					
+					<div class="list1">
+					
+						<div class="styleSelect">
+							<div>
+								<label for="select1">Укажите город</label>
+							</div>
+							<select id="select1">
+								<option>Мадрид</option>
+								<option>Барселона</option>
+								<option>Валенсия</option>
+								<option>Севилья</option>
+								<option>Сарагоса</option>
+							</select>
+						</div>
+					
+						<div class="styleSelect">
+							<div>
+								<label for="select2">Укажите тип недвижимости</label>
+							</div>
+							<select id="select2">
+								<option>Квартира</option>
+								<option>Дом</option>
+								<option>Вилла</option>
+								<option>Бунгало</option>
+								<option>Таунхаус</option>
+							</select>
+						</div>
+					
+						<div class="styleSelect">
+							<div>
+								<label for="select3">Укажите количество комнат</label>
+							</div>
+							<select id="select3">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+					
+					</div>
+					
+					<div class="list1">
+						<button onClick="modalWindow();">Сделать запрос</button>
+					</div>
+					
+				</div>
+
+				<input type="radio" name="tab" id="tab2" />
+				<label class="tab-label no-select" for="tab2" nth="2">Таблица</label>
+				<div class="tab-item" id="tab-content2">
+
+					<div class="tab_wrapper">
+					
+					<table class="table-3">
+						<thead>
+							<tr>
+								<th>Город</th>
+								<th>Тип недвижимости</th>
+								<th>Число комнат</th>
+								<th>Предоплата</th>
+								<th>Уборка</th>
+								<th>Цена</th>
+								<th>Число дней</th>
+								<th>Телефон агента</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td data-label="Город">Мадрид</td>
+								<td data-label="Тип недвижимости">Квартира</td>
+								<td data-label="Число комнат">1</td>
+								<td data-label="Предоплата">30%</td>
+								<td data-label="Уборка">Включена в цену</td>
+								<td data-label="Цена">30 евро/сут.</td>
+								<td data-label="Число дней">5</td>
+								<td data-label="Телефон агента">12345678</td>
+							</tr>
+							<tr>
+								<td data-label="Город">Валенсия</td>
+								<td data-label="Тип недвижимости">Аппартаменты</td>
+								<td data-label="Число комнат">6</td>
+								<td data-label="Предоплата">10%</td>
+								<td data-label="Уборка">Включена в цену</td>
+								<td data-label="Цена">300 евро/сут.</td>
+								<td data-label="Число дней">30</td>
+								<td data-label="Телефон агента">12345678</td>
+							</tr>
+							<tr>
+								<td data-label="Город">Валенсия</td>
+								<td data-label="Тип недвижимости">Дуплекс</td>
+								<td data-label="Число комнат">2</td>
+								<td data-label="Предоплата">50%</td>
+								<td data-label="Уборка">Оплачивается отдельно</td>
+								<td data-label="Цена">15 евро/сут.</td>
+								<td data-label="Число дней">10</td>
+								<td data-label="Телефон агента">12345678</td>
+							</tr>
+							<tr>
+								<td data-label="Город">Севилья</td>
+								<td data-label="Тип недвижимости">Комната отдельная</td>
+								<td data-label="Число комнат">1</td>
+								<td data-label="Предоплата">20%</td>
+								<td data-label="Уборка">Оплачивается отдельно</td>
+								<td data-label="Цена">5 евро/сут.</td>
+								<td data-label="Число дней">7</td>
+								<td data-label="Телефон агента">12345678</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					</div>
+					
+				</div>
+
+				<input type="radio" name="tab" id="tab3" />
+				<label class="tab-label no-select" for="tab3" nth="3">SVG-символы</label>
+				<div class="tab-item" id="tab-content3">
+					
+					<div class="list1">
+					
+						<div class="styleSelect">
+							<img src="coat-of-arms.svg" alt="Герб">
+						</div>
+					
+						<div class="styleSelect">
+							<img src="mansion.svg" alt="Дом №1">
+						</div>
+					
+						<div class="styleSelect">
+							<img src="building.svg" alt="Дом №2">
+						</div>
+					
+						<div class="styleSelect">
+							<img src="profit.svg" alt="Дом №3 с прибылью">
+						</div>
+					
+					</div>
+					
+					
+				</div>
+
+				<input type="radio" name="tab" id="tab4" />
+				<label class="tab-label no-select" for="tab4" nth="4">Ползунок</label>
+				<div class="tab-item" id="tab-content4">
+					
+					<div class="slidecontainer">
+						<input type="range" min="1" max="100" value="50" class="slider" id="myRange" onmousemove="test();">
+						 <p>Value: <span id="demo"></span></p>
+					</div>
+					
+				</div>
+
+				<input type="radio" name="tab" id="tab5" />
+				<label class="tab-label no-select" for="tab5" nth="5">Вкладка 5</label>
+				<div class="tab-item" id="tab-content5">
+					
+					<div class="tab5__text">
+						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		
+		<div>&nbsp;</div>
+	</section>
+
+
+  
+<!-- аккордеон
+    ================================================== -->
+	
+	<section id="accordion">
+	
+		<h2>Аккордеон</h2>
+
+		<div class="accordion">
+			<ul>
+				<li>
+					<input type="checkbox" checked>
+					<i></i> 
+					<!--<h2 class="title_block">Краткое описание (набор слов)</h2>-->
+					<h2>Могут ли иностранцы покупать жильё в Испании?</h2>
+					<div class="msg">
+						<p>Не просто могут, но и активно пользуются такой возможностью! Недвижимость в Испании покупают как в качестве "базы" для сезонного отдыха, так и в качестве инвестиции. В 2017 году на иностранцев пришлось 16% всех проданных домов и квартир в стране. Существует множество причин для покупки жилья в Испании. Как для туристов с путешественниками, так и для тех, кто задумывается об эмиграции.</p>
+						<p>К этому зарубежных инвесторов мотивирует и само испанское правительство, выдавая "золотые визы" тем, кто тратит на покупку недвижимости от €500 000. Этот документ даёт право жить в стране (но не работать по контракту) и пользуется популярностью у владельцев отпускного жилья и европейских пенсионеров.</p>
+						<p>Чтобы приобрести жилплощадь в Испании нужно получить NIE — идентификационный номер иностранца, позволяющий совершать сделки на территории страны.</p>
+					</div>
+				</li>
+				<li>
+					<input type="checkbox" checked>
+					<i></i>
+					<h2>Портрет покупателя испанского жилья</h2>
+					<div class="msg">
+						<img src="Inf3.jpg" alt="Картинка в аккордеоне" title="Картинка в аккордеоне"/>
+					</div>
+				</li>
+				<li>
+					<input type="checkbox" checked>
+					<i></i>
+					<h2>8 шагов покупки жилья в Испании</h2>
+					<div class="msg">
+						<p>1. Получите NIE. Идентификационный номер иностранца нужен тем, кто намерен купить недвижимость или автомобиль, уплатить налоги, подписать договор с интернет-провайдером, оформить ипотеку — в общем, всем, кто собирается совершать в Испании сколько-нибудь значимые юридические или финансовые действия. Займитесь NIE в самую первую очередь, как только вы начнете поиск жилья. Чем раньше оформите, тем лучше. Вы можете получить документ в Испании или в испанском консульстве в России (так будет быстрее). Обычно это занимает от недели до двух месяцев, если на дворе разгар пляжного сезона.</p>
+						<p>2. Найдите юриста, который говорит на русском и на испанском. Вам понадобится специалист, разбирающийся в испанском законе в сфере имущества. Покупка недвижимости и уплата всех необходимых налогов — это сложный вопрос для иностранца, который не знает местных законов и правил.</p>
+						<p>3. Откройте счет в испанском банке. Когда станет ясно, в каких числах и какую сумму денег требуется перевести на новый счёт, разумным решением будет предупредить банк о готовящейся операции, чтобы перевод не заблокировали из-за большой суммы.</p>
+						<p>4. Подпишите "Договор резервирования" в случае новой недвижимости или "Предварительный договор", если вы планируете покупку на вторичном рынке. Этот документ обозначает ваше намерение купить конкретный дом или квартиру, "забронировать" объект за собой и убрать из свободного доступа, чтобы на него больше никто не "покушался". Для этого вы должны внести залог в размере €3000-€6000 евро, после чего недвижимость перестанут показывать и предлагать другим покупателям. Не забудьте включить в договор пункт о расторжении, чтобы в случае невыполнения обязательств продавец вернул вам залог.</p>
+						<p>5. При необходимости — подайте заявку на ипотеку.</p>
+						<p>6. Сходите в свой банк и возьмите "чек на оплату" от имени собственника или застройщика (в случае ипотеки) перед тем, как обратиться к нотариусу.</p>
+						<p>7. Подпишите договор купли-продажи. Это последний этап, когда все стороны встречаются у нотариуса. Должны присутствовать вы (или ваш представитель), ваш адвокат, поставщик ипотечных услуг (если необходимо) и продавец или его представитель. Перед тем, как поставить подпись, ещё раз убедитесь в том, что у вас достаточно средств для оплаты всех налогов и сборов.</p>
+						<p>8. Зарегистрируйте свое право собственности в кадастровом и имущественном реестре.</p>
+					</div>
+				</li>
+				<li>
+					<input type="checkbox" checked>
+					<i></i>
+					<h2>Расходы при покупке жилья без ипотеки</h2>
+					<div class="msg">
+						<p>При приобретении жилья напрямую от застройщика уплачиваются два налога. Во-первых, необходимо оплатить аналог российского НДС в размере 10% от цены объекта. Во-вторых, исключительно с покупателей новой недвижимости взимается гербовый сбор, размер которого зависит от региона покупки и варьируется от 0,5% до 1,5%.</p>
+						<p>Покупатели жилья на вторичном рынке должны заплатить налог на передачу недвижимости. Процент налога на покупку жилья в Испании утверждается на региональном уровне и находится в пределах от 6 до 10 пунктов. Например, в Мадриде ставка равняется 6%, на Канарских островах – 6,5%, а в Андалузии, Валенсии, Каталонии и на Балеарских островах она может достигать 10%. ITP уплачивается в налоговые органы на местах, при их отсутствии в городе – в государственном органе, регистрирующем сделки с недвижимостью. В Мадриде и Андалузии платеж можно совершить через интернет</p>
+						<p>Выписка из реестра содержит информацию о текущем владельце жилья и виде собственности, а также краткую характеристику помещения (метраж, количество комнат и т. д.). Кроме того, в ней указаны имеющиеся долги и ограничения (например, по невыплаченной ипотеке). Выписка запрашивается в реестре собственности лично (выдается на следующий день), или через интернет (выдается через 1-2 суток).</p>
+						<p>Стоимость услуг нотариуса зависит от цены приобретаемого жилья. К примеру, недвижимое имущество в популярном диапазоне от 60101,61 евро и 150253,03 евро плата составит 0,1%. Для более дешевых диапазонов ставки выше, а для более дорогих – ниже.</p>
+						<p>Плата за регистрацию вносится в пользу государства и также зависит от цены объекта. Для вышеуказанного диапазона она составляет 0,075%.</p>
+					</div>
+				</li>
+				<li>
+					<input type="checkbox" checked>
+					<i></i>
+					<h2>Расходы при покупке жилья в ипотеку</h2>
+					<div class="msg">
+						<p>Гербовый сбор (AJD, IAJD) – 0,1-2% Взимается при оформлении договора об ипотечном займе в виде определенного процента от суммы кредита, в соответствии с установленным в регионе.</p>
+						<p>Оценка стоимости – 200-500 евро для среднего объекта Независимая оценка позволяет банку определить, не завышена ли цена жилья (в этом случае банк не сможет выгодно его реализовать по рыночной стоимости при возникновении проблем у заемщика). Чем дороже стоит объект недвижимости, тем дороже его оценка.</p>
+						<p>Регистрационные и нотариальные расходы Расходы на нотариальное оформление и регистрацию ипотеки в реестре собственности имеют прямую взаимосвязь с суммой кредита.</p>
+						<p>Страхование Страхование жилья является обязательным и чаще всего производится непосредственно в банке, выступающим посредником между своим клиентом и парнтером-страховщиком. Страхование жизни требуется в большинстве случаев, за редким исключением. Страховка на случаи проблем со здоровьем, увольнения с работы и т. п. возможна по желанию покупателя.</p>
+					</div>
+				</li>
+				
+			</ul>
+		</div>
+		
+		<div>&nbsp;</div>
+
+	</section>
+
+<!-- видеоплеер
+    ================================================== -->
+	
+	<section id="videoplayer">
+	
+		<h2>Видеоплеер</h2>
+		
+		<div class="video_wrapper">
+		
+			<div class="video_content">
+		
+				<!--<video preload="none" width="100%" height="100%" poster="prel01.jpg"> -->
+				<video id="media" preload="none" poster="prel01.jpg">
+					<source src="spanish_video_guide.mp4" type="video/mp4">
+					<source src="spanish_video_guide.ogg" type="video/ogg">
+					<source src="spanish_video_guide.webm" type="video/webm">
+					<object data="spanish_video_guide.mp4">
+						<embed src="spanish_video_guide.swf">
+					</object>
+				</video>
+				
+				<nav class="nav_video">
+					
+					<div id="buttons">
+						<input type="button" id="play" value="Воспроизвести" />
+						<input type="button" id="mute" value="Звук" />
+					</div>
+					
+					<div id="bar">
+						<div id="progress"></div>
+					</div>
+					
+					<div id="control">
+						<input type="range" id="volume" min="0" max="1" step="0.1" value="0.6" />
+					</div>
+					
+					
+				</nav>
+				
+			</div>
+	
+		</div>
+	
+	</section>
+	
+<!-- Карта с меткой
+    ================================================== -->	
+	<section id="mapinc">
+
+		<h2>Карта</h2>
+
+		<div class="mapinc__content">
+			<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A419b8c50395794926eefe15dec6937ce9c30120c52a5817f24e1050dda469a23&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+		</div>
+		
+		<div>&nbsp;</div>
+	</section>
+
+<!-- футер
+    ================================================== -->
+	<footer>
+		
+		<div class="footer_content">
+			<a href="https://wa.me/79922972309" target="_blank"><img src="whatsapp-logo.png" alt="Прямая связь" title="Прямая связь"/></a>
+		</div>
+	
+	</footer>
+	
+<!-- Модальное окно 1
+    ================================================== -->
+	<div id="modalwrap">
+		<div id="modalOkno">
+			<div class="modalOkno_head">Пожалуйста, проверьте информацию перед отправкой</div>
+			<div class="modalOkno_text">Желательный город: <span>Город</span></div>
+			<div class="modalOkno_text">Желательный тип недвижимости: <span>Тип</span></div>
+			<div class="modalOkno_text">Желательное число комнат: <span>Число</span></div>
+			<div class="modalFooter">
+				<button class="modal__botton1" onclick="document.getElementById('modalwrap').style.display='none';">Продолжить редактирование</button>
+				<button class="modal__botton2" onclick="document.getElementById('modalwrap').style.display='none';">Да, все верно</button>
+			</div>
+		</div>
+
+		<div class="close">
+			<a title="Закрыть" onclick="document.getElementById('modalwrap').style.display='none';">X</a>
+		</div>
+	</div>
+	<!-- окно на сайте -->
+
+<!-- Мобильное меню
+    ================================================== -->
+	<nav class="mobilenav">
+		<ul>
+
+			<li>
+				<a href="#tabs">Табы</a>
+			</li>
+			<li>
+				<a href="#accordion">Аккордеон</a>
+			</li>
+			<li>
+				<a href="#videoplayer">Видеоплеер</a>
+			</li>
+			<li>
+				<a href="#mapinc">Карта</a>
+			</li>
+
+		</ul>
+		
+	</nav>
+	<!-- Мобильное меню -->
+
+
+<!-- Java Script
+    ================================================== -->
+	<script>
+		
+		let elemNav = document.querySelector('.nav');
+		window.addEventListener('scroll',cenciColor);
+		//Добавляем тень к меню при прокрутке блока вниз и убираем при прокрутке вверх
+		function cenciColor() {
+			if (window.pageYOffset > 72) {
+			elemNav.className="nav scroll";
+			} else {
+				elemNav.className="nav";
+			}
+		}
+		
+		function modalWindow() {
+			let modalwrap = document.querySelector('#modalwrap');
+			modalwrap.style.display="flex";
+		}
+		
+		//Это код ползунка
+		//let slider1 = document.querySelector("#myRange");
+		//let output = document.querySelector("#demo");
+		//output.innerHTML = slider1.value; // Display the default slider value
+
+		// Update the current slider value (each time you drag the slider handle)
+		//slider1.oninput = function() {
+			//output.innerHTML = this.value;
+		//	output.innerHTML = this.value;
+		//}
+		
+		
+		//Для IE
+		function test() {
+			let slider = document.querySelector("#myRange").value;
+			document.querySelector("#demo").innerHTML =  slider;
+		}
+		
+		
+		//Это для проигрывателя
+		
+		var maxim, mmedia, play, bar, progress, mute, volime, loop;  
+		
+		function initiate(){
+			maxim = 300;
+			mmedia = document.querySelector('#media');
+			play = document.querySelector('#play');
+			bar = document.querySelector('#bar');
+			progress = document.querySelector('#progress');
+			mute = document.querySelector('#mute');
+			volime = document.querySelector('#volume');
+			
+			play.addEventListener('click', push);
+			mute.addEventListener('click', sound);
+			bar.addEventListener('click', move);
+			volume.addEventListener('click', level);
+		}
+		
+		function push() {
+			if(!mmedia.paused && !mmedia.ended) {
+				mmedia.pause();
+				play.value = 'Воспроизвести';
+				clearInterval(loop);
+			} else {
+				mmedia.play();
+				play.value = 'Стоп';
+				let loop = setInterval(status, 1000);
+			}
+		}
+		
+		function status() {
+			if(!mmedia.ended) {
+				let size = parseInt(mmedia.currentTime * maxim / mmedia.duration);
+				progress.style.width = size+'px';
+			} else {
+				progress.style.width = '0px';
+				play.innerHTML = 'Воспроизвести';
+				clearInterval(loop);
+			}
+		}
+		
+		function move(e) {
+			if(!mmedia.paused && !mmedia.ended){
+				let mouseX = e.pageX - bar.offsetLeft;
+				let newtime = mouseX * mmedia.duration / maxim;
+				mmedia.cerrentTime = newtime;
+				progress.style.width = mouseX+'px';
+			}
+		}
+		
+		function sound() {
+			if(mute.value == 'Звук') {
+				mmedia.muted = true;
+				mute.value = 'Тишина';
+			} else {
+				mmedia.muted = false;
+				mute.value = 'Звук';
+			}
+		}
+		
+		function level(){
+			mmedia.volume = volume.value;
+		}
+	
+		addEventListener('load', initiate, false);
+		
+		//Прокрутка
+		var linkNav = document.querySelectorAll('[href^="#"]'), //выбираем все ссылки к якорю на странице
+		V = 0.7;  // скорость, может иметь дробное значение через точку (чем меньше значение - тем больше скорость)
+		for (var i = 0; i < linkNav.length; i++) {
+			linkNav[i].addEventListener('click', function(e) { //по клику на ссылку
+			e.preventDefault(); //отменяем стандартное поведение
+			var w = window.pageYOffset,  // производим прокрутка прокрутка
+            hash = this.href.replace(/[^#]*(.*)/, '$1');  // к id элемента, к которому нужно перейти
+			t = document.querySelector(hash).getBoundingClientRect().top,  // отступ от окна браузера до id
+            start = null;
+			requestAnimationFrame(step);  // подробнее про функцию анимации [developer.mozilla.org]
+			function step(time) {
+				if (start === null) start = time;
+				var progress = time - start,
+					r = (t < 0 ? Math.max(w - progress/V, w + t) : Math.min(w + progress/V, w + t));
+				window.scrollTo(0,r);
+				if (r != w + t) {
+					requestAnimationFrame(step)
+				} else {
+					location.hash = hash  // URL с хэшем
+						}
+				}
+			}, false);
+		}
+		
+		
+		//Мобильное меню
+		function mobilemenu() {
+			let menu = document.querySelector('.mobilenav');
+			if (menu.style.display === 'flex') {
+				menu.style.display = 'none';
+			} else {
+				menu.style.display = 'flex';
+			}
+		}
+		
+		
+	</script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,1235 @@
+@font-face {
+font-family: Muller Regular; /* Имя шрифта */
+src: url(mullerregular.ttf); /* Путь к файлу со шрифтом */
+}
+
+body{
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Muller Regular', serif;
+}
+
+h2{
+	font-size: 20pt;
+	font-weight: 700;
+	padding-top: 92px;
+	/*padding-bottom: 10px;*/
+	color: #ffffff;
+	text-align: center;
+}
+
+
+.nav{
+	display: flex;
+	width: 100%;
+	height: 72px;
+	/*border: 1px solid red;*/
+	position: fixed;
+	align-items: center;
+	/*background-color: #bebebe;*/
+	background-color: #002a52;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+	
+}
+
+.scroll{
+	box-shadow: inset 0 -15px 10px -15px #002a52;
+	-webkit-box-shadow: inset 0 -15px 10px -15px #002a52;
+    -moz-box-shadow: inset 0 -15px 10px -15px #002a52;
+	background-color: #e20311;
+}
+
+
+.nav ul{
+	text-decoration: none;
+	list-style: none;
+	padding: 0;
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+	align-items: center;
+}
+
+.nav ul li{
+	padding-right: 20px;
+	padding-left: 20px;
+}
+
+.nav ul li a{
+	text-decoration: none;
+	font-size: 14pt;
+	/*font-weight: 700;*/
+	text-align: center;
+	color: #ffffff;
+}
+
+.nav__icon{
+	display: none;
+}
+
+.mobilenav{
+	display: none;
+	}
+
+#tabs{
+	display: inline-block;
+	margin: 0px;
+	padding: 0px;
+	height: auto;
+	min-height: 100vh;
+	background-color: #62aee0;
+	/*flex-wrap: wrap;
+	align-items: top;*/
+	width: 100%;
+	font-family: inherit;
+}
+
+
+/***************************************/
+/***************************************/
+/*******         ТАБЫ         **********/
+/***************************************/
+/***************************************/
+
+/*Общий блок расположения табов*/
+
+.tab-container{
+	/*background-color: transparent;*/
+	background: #0c5f96;
+	border-radius: 10px;
+	overflow: hidden;
+	width: 90%;
+	margin: 0px auto;
+	min-height: 350px;
+	height: auto;
+	/*border: 1px solid red;*/
+	/*height: 350px;*/
+	font-family: inherit;
+}
+
+/*Заголовок блока табов*/
+.tab-title{
+	/*font-family: sans-serif;*/
+	color: #ffffff;
+	margin: 10px;
+	font-weight: normal;
+	font-size: 16pt;
+}
+
+/* контейнер табов*/
+.tab-wrapper{
+	width: 100%;
+    /*overflow-x: scroll;*/
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.tab-wrapper .tab-item, .tab-wrapper input[type="radio"]{
+	display: none;
+}
+
+/* Контейнер, где расположен текст Таба */
+.tab-wrapper .tab-item{
+    background-color: #ffffff;
+    /*width: calc(100%-200px);*/
+    /*max-width: 100%; */
+	width: 100%;
+    padding: 20px;
+    order: 1;
+	border-radius: 0px 0px 10px 10px;
+	border: 1px solid #e20311;
+	/*мой текст*/
+	/*height: 100%;*/
+  }
+
+/*Название того или иного таба*/
+.tab-wrapper label{
+	height: 35px;
+	line-height: 35px;
+    min-width: 50px;
+    padding: 0px 20px;
+    text-align: center;
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+	margin-bottom: -1px;
+    /*border-top: 3px solid transparent; */
+    /*border-bottom: 3px solid transparent;*/
+    cursor: pointer;
+}
+
+/* запрет на выделение пользователем текста*/
+.no-select{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+/*Стиль для для label в котором input имеет свойство checked */
+.tab-wrapper input:checked + label{
+    border: 1px solid #e20311;
+	background-color: #e20311;
+	border-radius: 10px 10px 0px 0px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+/*делаем видимым ТАБ, у которого input имеет свойство checked */
+.tab-wrapper input:checked + label + .tab-item{
+	display: block;
+	min-height: 350px;
+}
+
+.list1{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	font-size: 14pt;
+	font-weight: 400;
+	font-family: inherit;
+	/*margin-bottom: 10px;*/
+	/*border: 1px solid #000000;*/
+}
+
+.list1 label {
+	color: #002a52!important;
+	min-width: 295px; /**/
+}
+
+.list1 select {
+	font-family: inherit;
+	font-size: 14pt;
+	font-weight: 400;
+	padding: 7px;
+	margin-top: 5px;
+	border: 1px solid #e20311;
+	color: #e20311!important;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	appearance: none;
+	min-width: 295px; /**/
+}
+
+
+.list1 button {
+	font-family: inherit;
+	font-size: 14pt;
+	font-weight: 400;
+	padding: 15px;
+	margin-top: 15px;
+	outline: none;
+	border: none;
+	color: #ffffff;
+	background: #0c5f96;
+}
+
+.list1 button:hover {
+	/*font-family: inherit;
+	font-size: 14pt;
+	font-weight: 400;
+	padding: 15px;
+	margin-top: 15px;
+	outline: none;*/
+	border: 1px solid #0c5f96;
+	color: #0c5f96;
+	background: #ffffff;
+}
+
+.styleSelect {
+	display: flex;
+	width: 30%;
+	min-width: 300px;
+	flex-wrap: wrap;
+	/*border: 1px solid #000000;*/
+	justify-content: center;
+	
+}
+
+.styleSelect img {
+	width: 260px;
+	height: 260px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#modalwrap {
+	display: none;
+	z-index: 60;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	background: rgba(255, 255, 255, 0.8);
+}
+
+#modalOkno	{
+	display: flex;
+	flex-wrap: wrap;
+	width: 450px;
+	height: 450px;
+	background: #0c5f96;
+	border-radius: 20px;
+	border: 2px solid #e20311;
+	overflow: hidden;
+	color: #ffffff;
+	font-family: inherit;
+	font-size: 14pt;
+}
+
+.close{
+	display: flex;
+	width: 30px;
+	height: 30px;
+	background: #0c5f96;
+	border-radius: 50%;
+	border: 1px solid #e20311;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	top: -230px;
+}
+
+.close a{
+	color: #ffffff;
+	font-family: inherit;
+	font-size: 16pt;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.modalOkno_head{
+	font-size: 16pt;
+	font-weight: 700;
+	text-align: center;
+	line-height: 1.5;
+	margin: 15px;
+	
+}
+
+.modalOkno_text{
+	margin-left: 15px;
+}
+
+#modalOkno span{
+	/*color: #e20311;*/
+	font-style: italic;
+	font-weight: 700;
+}
+
+.modalFooter {
+	display: flex;
+	width: 100%;
+	flex-wrap: nowrap;
+	align-self: flex-end;
+}
+
+.modal__botton1{
+	width: 50%;
+	height: 60px;
+	border: none;
+	outline: none;
+	font-family: inherit;
+	font-size: 14pt;
+	font-weight: 400;
+	color: #ffffff;
+	background: #e20311;
+	cursor: pointer;
+}
+
+.modal__botton2{
+	width: 50%;
+	height: 60px;
+	border: none;
+	outline: none;
+	font-family: inherit;
+	font-size: 14pt;
+	font-weight: 400;
+	color: #ffffff;
+	background: #62aee0;
+	cursor: pointer;
+}
+
+
+/***************************************/
+/*******      Таблица         **********/
+/***************************************/
+
+table.table-3 {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+	color: #002a52;
+}
+
+table.table-3 tr {
+	background-color: #e1f0fa;
+}
+
+table.table-3 tr:hover {
+	background-color: #62aee0;
+	color: #ffffff;
+}
+
+table.table-3 th {
+	text-align: center;
+	padding: 8px;
+	border: 1px solid #e20311;
+}
+
+table.table-3 td {
+	text-align: left;
+	padding: 8px;
+	border: 1px solid #e20311;
+}
+
+
+/***************************************/
+/*******      Ползунок        **********/
+/***************************************/
+
+
+.slidecontainer {
+    width: 90%;
+	margin: 5px auto;
+	color: #002a52;
+}
+
+.slider {
+    -webkit-appearance: none;
+	padding: 0px 0px 0px 0px; /*Для IE*/
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;
+    background: #62aee0;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #e20311;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #e20311;
+    cursor: pointer;
+}
+
+/****** Для IE https://brennaobrien.com/blog/2014/05/style-input-type-range-in-every-browser.html********/
+input[type=range]::-ms-track {
+    width: 100%;
+    height: 5px;
+   
+    /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+    background: transparent;
+    
+    /*leave room for the larger thumb to overflow with a transparent border */
+    border-color: transparent;
+    border-width: 6px 0;
+
+    /*remove default tick marks*/
+    color: transparent;
+}
+
+input[type=range]::-ms-fill-lower {
+    background: transparent;
+    border-radius: 10px;
+}
+
+input[type=range]::-ms-thumb {
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #e20311;
+}
+
+/*
+
+input[type=range]::-ms-fill-upper {
+    background: transparent;
+    border-radius: 10px;
+}
+
+input[type=range]:focus::-ms-fill-lower {
+    background: #888;
+}
+input[type=range]:focus::-ms-fill-upper {
+    background: #ccc;
+}
+*/
+
+/***************************************/
+/*******      Текст           **********/
+/***************************************/
+
+.tab5__text{
+	font-size: 14pt;
+	font-weight: 300;
+	text-align: justify;
+	line-height: 1.5;
+	color: #002a52;
+}
+
+
+/***************************************/
+/***************************************/
+/*******      АККОРДЕОН       **********/
+/***************************************/
+/***************************************/
+
+#accordion{
+	display: inline-block;
+	/*margin-top: 72px;*/
+	height: auto;
+	min-height: 100vh;
+	background-color: #0c5f96;
+	width: 100%;
+	font-family: inherit;
+}
+
+/* Формируем базовый контейнер аккордеона */
+.accordion {
+    width: 100%;
+/* ширина произвольная выбирается в зависимости от места размещения */
+    max-width: 720px;
+    min-height: 0px;
+    display: block;
+/* относительное позиционирование */
+    /*position: relative;*/
+    margin: 0px auto;
+    padding: 0px;
+    /*background-color: #62aee0;*/
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+/* заголовки панелей аккордеона */
+.accordion h2 {
+	font-size: 16px;
+	font-weight: 300;
+    letter-spacing: 1px;
+    display: block;
+	width: 100%;
+    margin: 0;
+    padding: 10px 25px;
+    cursor: pointer;
+    color: #ffffff;
+    background: #62aee0;
+    /*border-top: 1px solid #3face4;*/
+    /*border-bottom: 1px solid #2479a5;*/
+    border-bottom: 1px solid #0c5f96;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+/* Формируем блоки с содерханием */
+.msg {
+	/*position: relative;*/
+	overflow: auto;
+	/*max-height: 800px;*/
+	opacity: 1;
+	/*transform: translate(0, 0);*/
+}
+ 
+/* оформляем параграфы */
+.msg p {
+	color: #000000;
+	font-size: 12pt;
+	/*line-height: 20px;*/
+	/*letter-spacing: 1.5;*/
+	text-align: justify;
+	line-height: 1.5;
+	color: #002a52;
+	padding: 0 20px;
+}
+ 
+
+/* Формируем неупорядоченный список */
+.accordion ul {
+	list-style: none;
+	perspective: 900px;
+	padding: 0px;
+	margin: 0px;
+}
+ 
+/* Определяем и формируем отдельный элемент списка в который поместим скрытый флажек, заголовок панелей и блок с содержанием */
+.accordion ul li {
+	/*position: relative;*/
+	padding: 0;
+	margin: 0;
+}
+ 
+/* устанавливаем время ожидания перед воспроизведением анимации на основе нумерации в дереве элементов */
+.accordion ul li:nth-of-type(1) {
+	animation-delay: 0.5s;
+	-webkit-animation-delay: 0.5s;
+    -moz-animation-delay: 0.5s;
+    -o-animation-delay: 0.5s;
+	
+}
+.accordion ul li:nth-of-type(2) {
+	animation-delay: 0.75s;
+	-webkit-animation-delay: 0.75s;
+    -moz-animation-delay: 0.75s;
+    -o-animation-delay: 0.75s;
+}
+.accordion ul li:nth-of-type(3) {
+	animation-delay: 1s;
+	-webkit-animation-delay: 1s;
+    -moz-animation-delay: 1s;
+    -o-animation-delay: 1s;
+}
+.accordion ul li:last-of-type {
+	padding-bottom: 0;
+}
+ 
+/* Сформируем  указатель переключения состояния аккордеона */
+.accordion ul li i {
+	position: absolute;
+	transform: translate(-6px, 0px);
+	-ms-transform: translate(-6px, 0px);
+    -webkit-transform: translate(-6px, 0px);
+    -o-transform: translate(-6px, 0px);
+	
+	margin-top: 16px;
+/* расположим указатель на панели заголовка справа */
+	right: 25px;
+}
+ 
+/* "Рисуем сам указатель */
+.accordion ul li i:before, .accordion ul li i:after {
+	content: "";
+	position: absolute;
+	background-color: #eee;
+	width: 3px;
+	height: 9px;
+}
+
+/* Добавляем элемент трансформации указателя при переключении */
+.accordion ul li i:before {
+	transform: translate(-2px, 0px) rotate(45deg);
+	-ms-transform: translate(-2px, 0px) rotate(45deg);
+    -webkit-transform: translate(-2px, 0px) rotate(45deg);
+    -o-transform: translate(-2px, 0px) rotate(45deg);
+	
+}
+.accordion ul li i:after {
+	transform: translate(2px, 0px) rotate(-45deg);
+	-ms-transform: translate(2px, 0px) rotate(-45deg);
+    -webkit-transform: translate(2px, 0px) rotate(-45deg);
+    -o-transform: translate(2px, 0px) rotate(-45deg);
+}
+ 
+/* Делаем чекбокс скрытым*/
+.accordion ul li input[type=checkbox] {
+	position: absolute;
+	cursor: pointer;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	opacity: 0;
+}
+
+/* Когда у флажка установлен checked  блок с содержанием скрыт */
+.accordion ul li input[type=checkbox]:checked ~ div.msg {
+	margin-top: 0;
+	max-height: 0;
+	opacity: 0;
+	transform: translate(0, 50%);
+	-ms-transform: translate(0, 50%);
+    -webkit-transform: translate(0, 50%);
+    -o-transform: translate(0, 50%);
+}
+
+/* А указатель показывает вниз */
+.accordion ul li input[type=checkbox]:checked ~ i:before {
+	transform: translate(2px, 0px) rotate(45deg);
+	/*-ms-transform: translate(2px, 0px) rotate(45deg);
+    -webkit-transform: translate(2px, 0px) rotate(45deg);
+    -o-transform: translate(2px, 0px) rotate(45deg);*/
+}
+
+.accordion ul li input[type=checkbox]:checked ~ i:after {
+	transform: translate(-2px, 0px) rotate(-45deg);
+	/*-ms-transform: translate(2px, 0px) rotate(-45deg);
+    -webkit-transform: translate(2px, 0px) rotate(-45deg);
+    -o-transform: translate(2px, 0px) rotate(-45deg);*/
+}
+
+/*  Устанавливаем эффект перехода между двумя состояниями указателя */
+div.msg, ul li i:before, ul li i:after {
+	transition: all 0.5s ease-in-out;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+}
+
+/* Изображения внутри аккордеона сделаем их отзывчивыми */
+.accordion .msg img {
+	width: 100%;
+    height: auto;
+}
+ 
+
+
+/***************************************/
+/***************************************/
+/*******      ВИДЕОПЛЕЕР      **********/
+/***************************************/
+/***************************************/
+
+
+#videoplayer{
+	display: inline-block;
+	/*margin-top: 72px;*/
+	width: 100%;
+	height: auto;
+	min-height: 100vh;
+	background-color: #62aee0;
+}
+
+.video_wrapper{
+	display: flex;
+	width: 100%;
+	justify-content: center;
+}
+
+.video_content{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 720px;
+	/*height: 400px;*/
+	/*text-align: center;*/
+	background: #0c5f96;
+	border: 1px solid #ffffff;
+	border-radius: 10px;
+	padding: 10px 5px 5px 5px;
+}
+
+video {
+	width: 720px;
+	height: 400px;
+}
+
+.nav_video{
+	margin: 5px 0px;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+#play, #mute {
+	font-family: inherit;
+	font-size: 12pt;
+	padding: 2px 10px;
+	min-width: 65px;
+	border: 1px solid #ffffff;
+	background: #62aee0;
+	font-weight: 400;
+	border-radius: 7px;
+	margin-left: 3px;
+	color: #ffffff;
+}
+
+
+
+#buttons{
+	display: flex;
+	align-items: center;
+	/*width: 135px; */
+	height: 20px;
+	padding-left: 5px;
+}
+
+#bar{
+	display: flex;
+	align-items: center;
+	width: 300px;
+	/*width: 100%;*/
+	height: 16px;
+	padding: 2px;
+	margin: 2px 5px;
+	border: 1px solid #ffffff;
+	background: #ffffff;
+}
+
+#progress{
+	width: 0px;
+	height: 16px;
+	background: rgba(98,174,224,1);
+}
+
+
+/*Ползунок*/
+
+#control {
+    /*width: 90%;
+	margin: 0px auto;*/
+	color: #002a52;
+	margin-left: 5px;
+}
+
+#volume {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 5px;
+    border-radius: 5px;
+    background: #62aee0;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+	/*Для IE*/
+	padding: 0px 0px 0px 0px; 
+}
+
+#volume:hover {
+    opacity: 1;
+}
+
+#volume::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #e20311;
+    cursor: pointer;
+}
+
+#volume::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #e20311;
+    cursor: pointer;
+}
+
+
+/****** Для IE https://brennaobrien.com/blog/2014/05/style-input-type-range-in-every-browser.html********/
+#control input[type=range]::-ms-track {
+    width: 120px;
+    height: 5px;
+   
+    /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+    background: transparent;
+    
+    /*leave room for the larger thumb to overflow with a transparent border */
+    border-color: transparent;
+    border-width: 6px 0;
+
+    /*remove default tick marks*/
+    color: transparent;
+}
+
+#control input[type=range]::-ms-thumb {
+    border: none;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background: #e20311;
+	margin-bottom: 5px;
+}
+
+
+
+/***************************************/
+/***************************************/
+/*******      КАРТА           **********/
+/***************************************/
+/***************************************/
+
+#mapinc{
+	display: inline-block;
+	/*margin-top: 72px;*/
+	height: auto;
+	min-height: 100vh;
+	background-color: #0c5f96;
+	width: 100%;
+	margin-top: 0px;
+	text-align: center;
+}
+
+.mapinc__content{
+	display: block;
+	width: 80%;
+	margin: 0px auto;
+}
+
+
+/***************************************/
+/***************************************/
+/*******      ФУТЕР           **********/
+/***************************************/
+/***************************************/
+
+footer {
+	display: block;
+	width: 100%;
+	height: 100px;
+	background: #002a52;
+}
+
+.footer_content{
+	display: flex;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+footer img {
+	width: 70px;
+	height: 70px;
+}
+
+
+/***************************************/
+/***************************************/
+/*******      АДАПТИВКА       **********/
+/***************************************/
+/***************************************/
+
+@media (min-width: 240px) and (max-width: 575px) {
+	
+	/*Меню*/
+	.nav ul{
+	display: none;
+	}
+	
+	.nav__icon{
+	display: flex;
+	color: #ffffff;
+	/*justify-content: flex-end;*/
+	margin-left: auto;
+	margin-right: 20px;
+	}
+	
+	.mobilenav{
+	display: none;
+	z-index: 60;
+	position: fixed;
+	top: 72px;
+	left: 0px;
+	justify-content: center;
+	/*align-items: center;*/
+	width: 100%;
+	height: 100%;
+	background: rgba(255, 255, 255, 0.8);
+	}
+	
+	.mobilenav ul{
+	text-decoration: none;
+	list-style: none;
+	padding: 0;
+	display: block;
+	/*display: flex;*/
+	/*justify-content: center;*/
+	text-align: center;
+	width: 85%;
+	height: 180px;
+	text-wrap: wrap;
+	background: #002a52;
+	/*align-items: center;*/
+	}
+	
+	.mobilenav ul::after {
+	content: ''; 
+	position: absolute; /* Абсолютное позиционирование */
+	right: 90px; /* Положение треугольника */
+	top: -10px; /* Положение треугольника */
+	border: 10px solid transparent; /* Прозрачные границы */
+	border-bottom: 20px solid #002a52; /* Добавляем треугольник */
+	}
+	
+	.mobilenav ul li{
+		padding-top: 15px;
+		padding-bottom: 10px;
+		/*display: block;*/
+		width: 100%;
+	}
+
+	.mobilenav ul li a{
+		text-decoration: none;
+		font-size: 14pt;
+		/*font-weight: 700;*/
+		text-align: center;
+		color: #ffffff;
+	}
+	
+	
+	/*******************ТАБЫ*********************/
+
+	/*Общий блок расположения табов*/
+	.tab-container{
+		background: #0c5f96;
+		border-radius: 10px;
+		overflow: hidden;
+		width: 90%;
+		margin: 0px auto;
+		min-height: 350px;
+		height: auto;
+		font-family: inherit;
+	}
+
+	/* Контейнер, где расположен текст Таба */
+	.tab-wrapper .tab-item{
+		background-color: #ffffff;
+		width: 100%;
+		padding: 5px;
+		order: 1;
+		border-radius: 0px 0px 10px 10px;
+		border: none;
+	}
+
+	/*делаем видимым ТАБ, у которого input имеет свойство checked */
+	.tab-wrapper input:checked + label + .tab-item{
+		display: block;
+		min-height: 350px;
+		width: 100%;
+	}
+
+	.list1{
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		font-size: 14pt;
+		font-weight: 400;
+		font-family: inherit;
+		min-width: 260px;
+	}
+
+	.list1 label {
+		min-width: 260px; /**/
+		padding-top: 5px;
+	}
+
+	.list1 select {
+		font-family: inherit;
+		font-size: 14pt;
+		font-weight: 400;
+		padding: 7px;
+		margin-bottom: 5px;
+		border: 1px solid #e20311;
+		min-width: 260px; /**/
+	}
+
+	#modalwrap {
+		position: fixed;
+	}
+
+	#modalOkno	{
+		width: 250px;
+		font-size: 12pt;
+		height: auto;
+	}
+
+	.close {
+		display: none;
+	}
+
+	.modalOkno_head{
+		font-size: 14pt;
+	}
+	
+	.modalOkno_text{
+		margin-left: 15px;
+		line-height: 1.5;
+	}
+	
+	.modal__botton1{
+		font-size: 10pt;
+	}
+
+	.modal__botton2{
+		font-size: 10pt;
+	}
+
+
+
+	/****************Для таблицы**********************/
+	  	table.table-3 {
+		border: 0;
+	}
+
+  	table.table-3 thead {
+	    border: none;
+	    clip: rect(0 0 0 0);
+	    height: 1px;
+	    margin: -1px;
+	    overflow: hidden;
+	    padding: 0;
+	    position: absolute;
+	    width: 1px;
+  	}
+  
+  	table.table-3 tr {
+    	border-bottom: 1px solid #ddd;
+    	display: block;
+   		margin-bottom: 30px;
+  	}
+  
+	table.table-3 td {
+    	display: block;
+    	text-align: right;
+	}
+  
+	table.table-3 td::before {
+	    content: attr(data-label);
+	    float: left;
+	    font-weight: 700;
+	    text-transform: uppercase;
+		/*position: absolute;*/
+		/*left: 35px;*/
+		/*margin-right: auto;*/
+		/*text-align: left;*/
+		
+	}
+  
+	/****************Ползунок**********************/
+	.slidecontainer {
+		margin: 25px auto;
+	}
+	
+	/****************Аккордеон**********************/	
+	.accordion {
+		box-sizing: border-box;
+		transform: translate(0, 0);
+		max-width: 85%;
+		min-height: 100%;
+		margin: 0px auto;
+		}
+	
+	.accordion h2 {
+		padding: 10px 35px;
+		}
+
+	
+	/****************Для видеоблока**********************/
+	
+	#videoplayer{
+		min-height: 600px;
+	}
+	
+	.video_content{
+		/*display: none;*/
+		display: flex;
+		width: 300px;
+		text-align: center;
+		min-height: 300px;
+		align-items: flex-start;
+	}
+	
+	video {
+		width: 300px;
+		height: 167px;
+	}
+	
+	video[poster]{
+		width: 300px;
+		height: 167px;
+	}
+
+	#buttons{
+		/*display: flex;
+		align-items: center;*/
+		/*width: 135px; */
+		height: 40px;
+		width: 100%;
+		justify-content: center;
+		/*padding-left: 5px;*/
+	}
+
+	#control {
+		/*width: 90%;
+		margin: 0px auto;*/
+		color: #002a52;
+		margin: 10px auto;
+		
+	}
+	
+/*https://stackoverflow.com/questions/10826784/make-html5-video-poster-be-same-size-as-video-itself*/
+
+}
+
+@media (min-width: 576px) and (max-width: 1024px) {
+
+	.tab_wrapper{
+		width: 100%;
+		overflow: auto;
+		font-family: inherit;
+		font-size: 10pt;
+		font-weight: 300;
+	}
+
+	#modalwrap {
+		position: fixed;
+	}
+
+	#modalOkno	{
+		width: 350px;
+		font-size: 14pt;
+		height: auto;
+	}
+
+	.close {
+		display: none;
+	}
+
+	.modalOkno_head{
+		font-size: 16pt;
+	}
+	
+	.modalOkno_text{
+		padding: 5px;
+		line-height: 1.5;
+	}
+	
+	.modal__botton1{
+		font-size: 10pt;
+	}
+
+	.modal__botton2{
+		font-size: 10pt;
+	}
+
+
+
+	#videoplayer{
+	min-height: 650px;
+	}
+}
