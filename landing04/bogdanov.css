@@ -1227,11 +1227,23 @@ footer img {
 	}
 
 
+/****************Аккордеон**********************/
+	
+	.accordion {
+		box-sizing: border-box;
+		transform: translate(0, 0);
+		max-width: 85%;
+		min-height: 100%;
+		margin: 0px auto;
+	}
+
+
+
+/****************Для видеоблока**********************/
+	
 	#videoplayer{
 	min-height: 650px;
 	}	
-	
-	/****************Для видеоблока**********************/
 	
 	#videoplayer{
 		min-height: 600px;
