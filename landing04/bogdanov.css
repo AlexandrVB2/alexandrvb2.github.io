@@ -1240,7 +1240,7 @@ footer img {
 	.video_content{
 		/*display: none;*/
 		display: flex;
-		width: 300px;
+		width: 450px;
 		text-align: center;
 		min-height: 300px;
 		align-items: flex-start;
