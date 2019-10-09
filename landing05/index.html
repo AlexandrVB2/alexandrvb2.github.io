@@ -1,0 +1,247 @@
+<!DOCTYPE html >
+
+<html>
+
+<head>
+
+	<meta charset="utf-8"/>
+	<title>Tic Tac Toe JavaScript</title>
+	<meta name="description" content="Tic Tac Toe JavaScript" />
+    <meta name="author" content="Alexander V Bogdanov https://alexandrvb2.github.io" />
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+	
+</head>
+
+<style>
+
+body{
+	margin: 0px;
+	padding: 0px;
+	background-color: #ffffff;
+	font-family: 'Lato', sans-serif;
+}
+
+.wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	width: 180px;
+	justify-content: center;
+	margin: 0px auto;
+}
+
+.head {
+	width: 100%;
+	display: flex;
+	min-height: 30px;
+	margin-top: 30px;
+	font-weight: 700;
+	color: #8f1714;
+	justify-content: center;
+}
+
+.head1 {
+	width: 100%;
+	display: flex;
+	min-height: 30px;
+	font-weight: 700;
+	color: #8f1714;
+	justify-content: center;
+}
+
+#gameField{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+
+input[type="text"] {
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	background: #e5b326;
+	border: 1px solid #6f7c25;
+	padding: 2px;
+	font-size: 18pt;
+	font-weight: 700;
+	color: #8f1714;
+	display: flex;
+}
+
+
+.btnTtt {
+	width: 120px;
+	font-family: inherit;
+	font-size: 14pt;
+	font-weight: 400;
+	padding: 15px;
+	border: none;
+	color: #ffffff;
+	background: #6f7c25;
+}
+
+.btnTtt:hover {
+	border: 1px solid #6f7c25;
+	color: #8f1714;
+	background: #e5b326;
+}
+
+.btnTtt:active {
+	border: 1px solid #6f7c25;
+	color: #8f1714;
+	background: #e5b326;
+}
+
+
+</style>
+
+<body>
+
+
+<div class="wrapper">
+
+	<!--========start info -->
+	<div class="head">Begin game: X</div>
+
+	<!--========playing field -->
+	<div id="gameField">
+	
+		<div>
+			<input type="text" data-num="1" />
+			<input type="text" data-num="2" />
+			<input type="text" data-num="3" />
+		</div>
+	
+		<div>
+			<input type="text" data-num="4" />
+			<input type="text" data-num="5" />
+			<input type="text" data-num="6" />
+		</div>
+
+		<div>
+			<input type="text" data-num="7" />
+			<input type="text" data-num="8" />
+			<input type="text" data-num="9" />
+		</div>
+	
+	</div>
+
+	<!--=======comment about the winner -->
+	<div class="head">Win the game: <span class="winner1"></span></div>
+
+	<!--======= new game -->
+	<div class="head1"><input type="button" value="New game" onClick="restart();" class="btnTtt"/></div>
+
+</div>
+
+<script>
+	
+	let startSymbol = 'O'; // to start with the cross
+	let arrCross = [[0, 0, 0], [0, 0, 0], [0, 0, 0]] //the array to write the data on the crosses
+	let arrZero = [[0, 0, 0], [0, 0, 0], [0, 0, 0]] //the array to write data on the toe
+	
+	let inputs = document.querySelectorAll('input[type="text"]'); //select all data input fields in a separate array
+	
+	let arr = ''; // name of the subsidiary array
+	
+	
+	//Hang the event of clicking the mouse button
+	for (i=0; i<inputs.length; i++) {
+		inputs[i].addEventListener('click', calc);
+	} 
+	
+	function calc() {
+		if (startSymbol === 'O') {startSymbol = 'X'; arr='arrCross'; document.querySelector('.head').innerHTML='Begin game: O';} 
+			else 
+			{startSymbol = 'O'; arr='arrZero'; document.querySelector('.head').innerHTML='Begin game: X';}
+		this.value = startSymbol;
+		this.disabled = true;
+		let index = this.dataset.num-1;
+		arrChange(arr,index);
+	}
+	
+	function arrChange(arr,index) {
+		
+		let sum1 = 0; //the sum of the elements of the array of crosses on the line
+		let sum2 = 0; //the sum of the array elements toe the line
+
+		let sum3 = 0; //sum of elements of an array of crosses on a column
+		let sum4 = 0; //sum of zeros array elements by column
+
+		if (arr === 'arrCross') {
+			if (index===0) {arrCross[0][0]=1;}
+			if (index===1) {arrCross[0][1]=1;}
+			if (index===2) {arrCross[0][2]=1;}
+			if (index===3) {arrCross[1][0]=1;}
+			if (index===4) {arrCross[1][1]=1;}
+			if (index===5) {arrCross[1][2]=1;}
+			if (index===6) {arrCross[2][0]=1;}
+			if (index===7) {arrCross[2][1]=1;}
+			if (index===8) {arrCross[2][2]=1;}
+		} else {
+			if (index===0) {arrZero[0][0]=1;}
+			if (index===1) {arrZero[0][1]=1;}
+			if (index===2) {arrZero[0][2]=1;}
+			if (index===3) {arrZero[1][0]=1;}
+			if (index===4) {arrZero[1][1]=1;}
+			if (index===5) {arrZero[1][2]=1;}
+			if (index===6) {arrZero[2][0]=1;}
+			if (index===7) {arrZero[2][1]=1;}
+			if (index===8) {arrZero[2][2]=1;}
+		}
+		
+		//Checking by lines
+		for (i=0; i<3; i++) {
+			for (j=0; j<3; j++) {
+				sum1 = sum1+parseInt(arrCross[i][j]);
+				sum2 = sum2+parseInt(arrZero[i][j]);
+			}
+			if (sum1 === 3) {document.querySelector('.winner1').innerHTML='X'; stop_game();} else {sum1 = 0;}
+			if (sum2 === 3) {document.querySelector('.winner1').innerHTML='O'; stop_game();} else {sum2 = 0;}
+		
+		}
+		
+		//Checking by columns
+		for (i=0; i<3; i++) {
+			for (j=0; j<3; j++) {
+				sum3 = sum3+parseInt(arrCross[j][i]);
+				sum4 = sum4+parseInt(arrZero[j][i]);
+			}
+			if (sum3 === 3) {document.querySelector('.winner1').innerHTML='X'; stop_game();} else {sum3 = 0;}
+			if (sum4 === 3) {document.querySelector('.winner1').innerHTML='O'; stop_game();} else {sum4 = 0;}
+		}
+		
+		
+		let sum5 = arrCross[0][0]+arrCross[1][1]+arrCross[2][2]; //the sum of the elements of the array of crosses on the diagonal 1
+		let sum6 = arrZero[0][0]+arrZero[1][1]+arrZero[2][2]; //the sum of the elements of the array of zeros on the diagonal 1
+		if (sum5 === 3) {document.querySelector('.winner1').innerHTML='X'; stop_game();}
+		if (sum6 === 3) {document.querySelector('.winner1').innerHTML='O'; stop_game();}
+		
+		let sum7 = arrCross[0][2]+arrCross[1][1]+arrCross[2][0]; //the sum of the elements of the array of crosses on the diagonal 2
+		let sum8 = arrZero[0][2]+arrZero[1][1]+arrZero[2][0]; //the sum of the elements of the array of zeros on the diagonal 2
+		if (sum7 === 3) {document.querySelector('.winner1').innerHTML='X'; stop_game();}
+		if (sum8 === 3) {document.querySelector('.winner1').innerHTML='O'; stop_game();}
+		
+	}
+	
+	function stop_game(){
+		for (i=0; i<inputs.length; i++) {
+		inputs[i].disabled = true;
+		} 
+	}
+	
+	
+	//Launch a new game
+	function restart() {
+		window.location.reload();
+	}
+	
+
+</script>
+
+</body>
+
+</html>
