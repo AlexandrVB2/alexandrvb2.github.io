@@ -128,39 +128,37 @@ a{
 
 <script>
 
+//*******************************************************
+//current month
+//*******************************************************
+
 let arrDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]; //Число дней в каждом месяце в году
-let monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]; //Название каждого месяца в году
+let monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 	
 var date = new Date();
-//let date = new Date(2019,11,0); тестовый год
 
-var currentMonth = date.getMonth(); //текущий месяц
-var currentYear = date.getFullYear(); //текущий год
-var currentDay = date.getDate(); //текущий день
-//alert(currentDay);
+var currentMonth = date.getMonth();
+var currentYear = date.getFullYear();
+var currentDay = date.getDate();
 
-if (currentMonth === 0) {document.querySelector('#prevMonth').classList.add('unvisible');} // Принудительно убираем стрелку влемво если текущий месяц январь
-if (currentMonth === 11) {document.querySelector('#nextMonth').classList.add('unvisible');} // Принудительно убираем стрелку вправо если текущий месяц декабрь
+if (currentMonth === 0) {document.querySelector('#prevMonth').classList.add('unvisible');}
+if (currentMonth === 11) {document.querySelector('#nextMonth').classList.add('unvisible');}
 
-
-var mainMonth = currentMonth; //Записываем в переменную текущий месяц для закрашивания квадратика
-var mainDay = currentDay; // Записываем в переменную текущий день для закрашивания квадратика
+var mainMonth = currentMonth;
+var mainDay = currentDay;
 
 let monthPosition = document.querySelector('#monthName');
 monthPosition.innerHTML = monthNames[currentMonth];
 
-//С какого дня начинается месяц
 var date2 = new Date(currentYear, currentMonth, 0); 
-var monthStartDay = date2.getDay(); // с этого дня недели начинается месяц
+var monthStartDay = date2.getDay();
 
-//пустые квадратики для правильного начала месяца
 for (i=0; i<monthStartDay; i++) {
 	var parent = document.querySelector('#monthDay');
 	var div = document.createElement('div');
 	parent.insertAdjacentElement('beforeEnd', div);
 }
 
-//Теперь заполняем календарь днями недели текущего месяца
 for (i=0; i<arrDays[currentMonth]; i++) {
 	var parent = document.querySelector('#monthDay');
 	var div = document.createElement('div');
@@ -170,14 +168,13 @@ for (i=0; i<arrDays[currentMonth]; i++) {
 }
 
 //*******************************************************
-//Следующий месяц
+//next month
 //*******************************************************
 
 function nextMonth(){
 
-	let currentMonthName = monthPosition.innerHTML; //определяем текущее название месяца
+	let currentMonthName = monthPosition.innerHTML;
 
-	//ищем в массиве текущий месяц
 	let y=0;
 	for (i=0; i<monthNames.length; i++) {
 		if (monthNames[i] === currentMonthName) {y=i};
@@ -192,35 +189,29 @@ function nextMonth(){
 	var parent = document.querySelector('#monthDay');
 	parent.innerHTML = '';
 	
-	var date = new Date(currentYear,y+1,0); // обновляем текущий период
-	var currentMonth = date.getMonth(); //текущий месяц
-	//var currentYear2 = date.getFullYear(); //текущий год
+	var date = new Date(currentYear,y+1,0);
+	var currentMonth = date.getMonth();
 
-	//С какого дня начинается месяц
 	var date2 = new Date(currentYear, currentMonth, 0); 
-	var monthStartDay = date2.getDay(); // с этого дня недели начинается месяц
+	var monthStartDay = date2.getDay();
 
-	//пустые квадратики для правильного начала месяца
 	for (i=0; i<monthStartDay; i++) {
 		var parent = document.querySelector('#monthDay');
 		var div = document.createElement('div');
 		parent.insertAdjacentElement('beforeEnd', div);
 	}
 
-	//Теперь заполняем календарь днями недели месяца
 	for (i=0; i<arrDays[currentMonth]; i++) {
 		var parent = document.querySelector('#monthDay');
 		var div = document.createElement('div');
 		div.innerHTML = i+1;
 		
-		//Закрашивание текущего дня
 		if ((i===mainDay-1) && (currentMonth===mainMonth)){div.classList.add('currentDay');}
 	
 		parent.insertAdjacentElement('beforeEnd', div);
 		
 	}
 	
-	//Проверяем наличие стрелки влево
 	if (document.querySelector('#prevMonth').classList.contains('unvisible')===true){
 		document.querySelector('#prevMonth').classList.remove('unvisible');
 	}
@@ -228,14 +219,13 @@ function nextMonth(){
 }
 
 //*******************************************************
-//Предыдущий месяц
+//previous month
 //*******************************************************
 
 function prevMonth(){
 
-	let currentMonthName = monthPosition.innerHTML; //определяем текущее название месяца
+	let currentMonthName = monthPosition.innerHTML;
 
-	//ищем в массиве текущий месяц
 	let y=0;
 	for (i=0; i<monthNames.length; i++) {
 		if (monthNames[i] === currentMonthName) {y=i};
@@ -250,40 +240,33 @@ function prevMonth(){
 	var parent = document.querySelector('#monthDay');
 	parent.innerHTML = '';
 	
-	var date = new Date(currentYear,y+1,0); // обновляем текущий период
-	var currentMonth = date.getMonth(); //текущий месяц
-	//var currentYear2 = date.getFullYear(); //текущий год
+	var date = new Date(currentYear,y+1,0);
+	var currentMonth = date.getMonth();
 
-	//С какого дня начинается месяц
 	var date2 = new Date(currentYear, currentMonth, 0); 
-	var monthStartDay = date2.getDay(); // с этого дня недели начинается месяц
+	var monthStartDay = date2.getDay();
 
-	//пустые квадратики для правильного начала месяца
 	for (i=0; i<monthStartDay; i++) {
 		var parent = document.querySelector('#monthDay');
 		var div = document.createElement('div');
 		parent.insertAdjacentElement('beforeEnd', div);
 	}
 
-	//Теперь заполняем календарь днями недели месяца
 	for (i=0; i<arrDays[currentMonth]; i++) {
 		var parent = document.querySelector('#monthDay');
 		var div = document.createElement('div');
 		div.innerHTML = i+1;
 		
-		//Закрашивание текущего дня
 		if ((i===mainDay-1) && (currentMonth===mainMonth)){div.classList.add('currentDay');}
 		
 		parent.insertAdjacentElement('beforeEnd', div);
 	}
 	
-	//Проверяем наличие стрелки вправо
 	if (document.querySelector('#nextMonth').classList.contains('unvisible')===true){
 		document.querySelector('#nextMonth').classList.remove('unvisible');
 	}
 	
 }
-
 
 
 </script>
