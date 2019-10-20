@@ -88,11 +88,9 @@ button:hover{
 
 <div id="wrapper">
 
-	<div id="header">Нажмите на кнопку для начала игры:</div>
+	<div id="header">Click on the button to start the game:</div>
 
-	<!-- здесь помещаем игровое поле -->
-	<div id="gameField">
-	</div>
+	<div id="gameField"></div>
 
 	<div id="footer">
 		<button id="button1" onClick="game();">Start game</button>
@@ -106,15 +104,14 @@ button:hover{
 
 function game(){
 	
-	//останавливаем таймер, если он есть
 	if(window.lowTime) {window.clearInterval(window.lowTime);}
 	
-	let arrMain = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]; // контрольный массив для сравнения нажимаемых числел
-	let arrTemp = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]; // массив для текущей работы
-	let sum = 0; // сумма правильно нажатых элементов
-	let gameTime = 60; // время на игру
+	let arrMain = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25];
+	let arrTemp = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25];
+	let sum = 0;
+	let gameTime = 60;
 	
-	function compareRandom(a, b) {return Math.random() - 0.5;} // для сортировки рабочего массива в случайном порядке
+	function compareRandom(a, b) {return Math.random() - 0.5;}
 	arrTemp.sort(compareRandom);
 	
 	let gameStart = document.querySelector('#gameField');
@@ -124,7 +121,6 @@ function game(){
 	
 	for (i=0; i<25; i++) {
 		let div = document.createElement('div');
-		//div.innerHTML = i+1;
 		div.innerHTML = arrTemp[i];
 		div.addEventListener('click', clearNumber);
 		parent.insertAdjacentElement('beforeEnd', div);
@@ -132,19 +128,18 @@ function game(){
 	
 	document.querySelector('#button1').innerHTML = 'New game';
 	
-	document.querySelector('#header').innerHTML = 'Осталось времени: '+gameTime+' сек.';
+	document.querySelector('#header').innerHTML = 'Time left: '+gameTime+' second.';
 	
-	//Запускаем таймер глобальной переменной
 	window.lowTime = window.setInterval(timer,1000);
 	
 	function timer(){
 		gameTime=gameTime-1;
 		
 		if (gameTime===0) {
-			document.querySelector('#header').innerHTML = 'Вы проиграли. Начните новую игру';
+			document.querySelector('#header').innerHTML = 'You lost. Start a new game';
 			window.clearInterval(window.lowTime);
 		} else {
-		document.querySelector('#header').innerHTML = 'Осталось времени: '+gameTime+' сек.';
+		document.querySelector('#header').innerHTML = 'Time left: '+gameTime+' second.';
 		}
 	}
 	
@@ -152,7 +147,6 @@ function game(){
 		let tempNumber = parseInt(this.innerHTML);
 		
 		if (tempNumber === arrMain[0]) {
-			//Удалить момент массива
 			arrMain.shift();
 			this.innerHTML = '';
 			sum = sum+1;
@@ -160,7 +154,7 @@ function game(){
 			//Победа игрока
 			if (sum===25) {
 				window.clearInterval(window.lowTime);
-				document.querySelector('#header').innerHTML = document.querySelector('#header').innerHTML+' Поздравляем! Вы - выиграли!';
+				document.querySelector('#header').innerHTML = document.querySelector('#header').innerHTML+' Congratulations! You win!';
 			}
 
 		}
