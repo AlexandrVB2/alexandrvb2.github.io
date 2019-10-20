@@ -1,0 +1,178 @@
+<!DOCTYPE html >
+
+<html>
+
+<head>
+
+	<meta charset="utf-8"/>
+	<title>JavaScript Shulte tables, Shulte grids</title>
+	<meta name="description" content="JavaScript Shulte tables, Shulte grids" />
+    <meta name="author" content="Alexander V Bogdanov https://alexandrvb2.github.io" />
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+	
+</head>
+
+<style>
+
+body{
+	margin: 0px;
+	padding: 0px;
+	background-color: #ffffff;
+	font-family: 'Lato', sans-serif;
+	font-size: 12pt;
+	font-weight: 400;
+	color: #1d5956;
+}
+
+
+#wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 300px;
+	margin: 20px auto;
+}
+
+#header{
+	width: 100%
+	display: flex;
+	justify-content: center;
+	text-align: center;
+}
+
+
+#gameField{
+	display: flex;
+	width: 90%;
+	flex-wrap: wrap;
+	margin: 10px auto;
+}
+
+#gameField div{
+	display: flex;
+	width: 50px;
+	height: 50px;
+	margin: 1px;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid #1d5956;
+	cursor: pointer;
+}
+
+#footer{
+	width: 100%
+	display: flex;
+}
+
+button {
+	font-family: inherit;
+	font-size: 14pt;
+	font-weight: 400;
+	padding: 15px 25px 15px 25px;
+	border: none;
+	background-color: #3BAA36;
+	outline: none;
+	color: #ffffff;
+}
+
+button:hover{
+	background-color: #29807C;
+}
+
+</style>
+
+<body>
+
+<div id="wrapper">
+
+	<div id="header">Нажмите на кнопку для начала игры:</div>
+
+	<!-- здесь помещаем игровое поле -->
+	<div id="gameField">
+	</div>
+
+	<div id="footer">
+		<button id="button1" onClick="game();">Start game</button>
+	</div>
+
+</div>
+
+
+
+<script>
+
+function game(){
+	
+	//останавливаем таймер, если он есть
+	if(window.lowTime) {window.clearInterval(window.lowTime);}
+	
+	let arrMain = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]; // контрольный массив для сравнения нажимаемых числел
+	let arrTemp = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]; // массив для текущей работы
+	let sum = 0; // сумма правильно нажатых элементов
+	let gameTime = 60; // время на игру
+	
+	function compareRandom(a, b) {return Math.random() - 0.5;} // для сортировки рабочего массива в случайном порядке
+	arrTemp.sort(compareRandom);
+	
+	let gameStart = document.querySelector('#gameField');
+	gameStart.innerHTML = '';
+	
+	let parent = document.querySelector('#gameField');
+	
+	for (i=0; i<25; i++) {
+		let div = document.createElement('div');
+		//div.innerHTML = i+1;
+		div.innerHTML = arrTemp[i];
+		div.addEventListener('click', clearNumber);
+		parent.insertAdjacentElement('beforeEnd', div);
+	}
+	
+	document.querySelector('#button1').innerHTML = 'New game';
+	
+	document.querySelector('#header').innerHTML = 'Осталось времени: '+gameTime+' сек.';
+	
+	//Запускаем таймер глобальной переменной
+	window.lowTime = window.setInterval(timer,1000);
+	
+	function timer(){
+		gameTime=gameTime-1;
+		
+		if (gameTime===0) {
+			document.querySelector('#header').innerHTML = 'Вы проиграли. Начните новую игру';
+			window.clearInterval(window.lowTime);
+		} else {
+		document.querySelector('#header').innerHTML = 'Осталось времени: '+gameTime+' сек.';
+		}
+	}
+	
+	function clearNumber() {
+		let tempNumber = parseInt(this.innerHTML);
+		
+		if (tempNumber === arrMain[0]) {
+			//Удалить момент массива
+			arrMain.shift();
+			this.innerHTML = '';
+			sum = sum+1;
+			
+			//Победа игрока
+			if (sum===25) {
+				window.clearInterval(window.lowTime);
+				document.querySelector('#header').innerHTML = document.querySelector('#header').innerHTML+' Поздравляем! Вы - выиграли!';
+			}
+
+		}
+		
+	}
+
+}
+
+
+
+</script>
+
+</body>
+
+</html>
